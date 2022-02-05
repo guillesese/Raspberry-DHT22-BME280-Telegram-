@@ -59,8 +59,8 @@ def calculo_indice_calor(temperatura, humedad):
     return hi
 
 def telegram_bot_sendtext(bot_message):
-    bot_token = '2122470679:AAGbRfLEm4hjSupP9r6uvsmZFA2q5KziGho'
-    bot_chatID = '3090280'
+    bot_token = '%BOT_TOKEN%'
+    bot_chatID = '%BOT_CHATID%'
     send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
 
     response = requests.get(send_text)
@@ -78,7 +78,7 @@ def main():
     bme280.sea_level_pressure = 1013.25
     #Conexion con ThingSpeak
     channel_id = 1600659
-    key = ''
+    key = '%KEY%'
     #channel = thingspeak.Channel(id=channel_id, write_key=key)
     BASE_URL = "https://api.thingspeak.com/update?api_key={}".format(key)
 
